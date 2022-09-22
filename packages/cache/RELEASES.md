@@ -65,3 +65,23 @@
 
 ### 2.0.5
 - Fix to avoid saving empty cache when no files are available for caching. ([issue](https://github.com/actions/cache/issues/624))
+
+### 2.0.6
+- Fix `Tar failed with error: The process '/usr/bin/tar' failed with exit code 1` issue when temp directory where tar is getting created is actually the subdirectory of the path mentioned by the user for caching. ([issue](https://github.com/actions/cache/issues/689))
+
+### 3.0.0
+- Updated actions/cache to suppress Actions cache server error and log warning for those error  [#1122](https://github.com/actions/toolkit/pull/1122)
+
+### 3.0.1
+- Fix [#833](https://github.com/actions/cache/issues/833) - cache doesn't work with github workspace directory.
+- Fix [#809](https://github.com/actions/cache/issues/809) `zstd -d: no such file or directory` error on AWS self-hosted runners.
+
+### 3.0.2
+- Added 1 hour timeout for the download stuck issue [#810](https://github.com/actions/cache/issues/810).
+
+### 3.0.3
+- Bug fixes for download stuck issue [#810](https://github.com/actions/cache/issues/810).
+
+### 3.0.4
+- Fix zstd not working for windows on gnu tar in issues [#888](https://github.com/actions/cache/issues/888) and [#891](https://github.com/actions/cache/issues/891).
+- Allowing users to provide a custom timeout as input for aborting download of a cache segment using an environment variable `SEGMENT_DOWNLOAD_TIMEOUT_MIN`. Default is 60 minutes.
